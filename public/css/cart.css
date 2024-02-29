@@ -1,99 +1,92 @@
-
-/*-----------------------------------*\
-  #shopping cart
-\*-----------------------------------*/
-
-.shopping-cart {
-    width: 750px;
-    height: 423px;
-    margin: 80px auto;
-    background: #FFFFFF;
-    box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
-    border-radius: 6px;
-
-    display: flex;
-    flex-direction: column;
-}
-.title {
-    height: 60px;
-    border-bottom: 1px solid #E1E8EE;
-    padding: 20px 30px;
-    color: #5E6977;
-    font-size: 18px;
-    font-weight: 400;
-}
-.item {
-    padding: 20px 30px;
-    height: 120px;
-    display: flex;
+table {
+    border-collapse: collapse;
+    width: 100%;
 }
 
-.item:nth-child(3) {
-    border-top:  1px solid #E1E8EE;
-    border-bottom:  1px solid #E1E8EE;
-}
-.buttons {
-    position: relative;
-    padding-top: 30px;
-    margin-right: 60px;
-}
-.delete-btn,
-.like-btn {
-    display: inline-block;
-    Cursor: pointer;
-}
-.delete-btn {
-    width: 18px;
-    height: 17px;
-    background: url(&amp;quot;delete-icn.svg&amp;quot;) no-repeat center;
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #DDD;
 }
 
-.like-btn {
-    position: absolute;
-    top: 9px;
-    left: 15px;
-    background: url('twitter-heart.png');
-    width: 60px;
-    height: 60px;
-    background-size: 2900%;
-    background-repeat: no-repeat;
-}
-.is-active {
-    animation-name: animate;
-    animation-duration: .8s;
-    animation-iteration-count: 1;
-    animation-timing-function: steps(28);
-    animation-fill-mode: forwards;
-}
 
-@keyframes animate {
-    0%   { background-position: left;  }
-    50%  { background-position: right; }
-    100% { background-position: right; }
-}
-.image {
-    margin-right: 50px;
-}
+/*checkbox*/
 
-/*Let’s add some basic style to  product name and description.*/
-.description {
-    padding-top: 10px;
-    margin-right: 60px;
-    width: 115px;
-}
-
-.description span {
+/* The container */
+.check-container {
     display: block;
-    font-size: 14px;
-    color: #43484D;
-    font-weight: 400;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    /*font-size: 22px;*/
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-.description span:first-child {
-    margin-bottom: 5px;
+/* Hide the browser's default radio button */
+.check-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
 }
-.description span:last-child {
-    font-weight: 300;
-    margin-top: 8px;
-    color: #86939E;
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.check-container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.check-container input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.check-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.check-container .checkmark:after {
+    top: 7px;
+    left: 7px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: white;
+}
+
+.cart-image {
+    height: 100px;
+    object-fit: contain;
+}
+
+.gen-text {
+    font-size: var(--fs-5);
+    color: var(--sonic-silver);
+    font-weight: var(--weight-500);
+}
+
+.cart-container {
+    max-width: 70%;
 }
