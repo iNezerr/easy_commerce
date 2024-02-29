@@ -1,4 +1,4 @@
-@extends('layouts.support')
+ @extends('layouts.support')
 @section('extra-css')
     <link rel="stylesheet" href="{{asset('css/cart.css')}}">
 @endsection
