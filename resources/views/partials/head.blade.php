@@ -90,11 +90,13 @@
                     <ion-icon name="heart-outline"></ion-icon>
                     <span class="count">0</span>
                 </button>
-
+{{--                cart bag--}}
+                <a href="/cart">
                 <button class="action-btn">
                     <ion-icon name="bag-handle-outline"></ion-icon>
                     <span class="count">0</span>
                 </button>
+                </a>
 
             </div>
 
